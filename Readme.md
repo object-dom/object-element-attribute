@@ -16,6 +16,8 @@
 ####.setAttribute(String name, String value)
 ####.removeAttribute(String name)
 
+## Test
+http://object-dom.github.io/object-element-attribute/test
 
 ## License
 
