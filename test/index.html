@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+  </head>
+  <body>
+    <script src="/build/build.js"></script>
+    <script>
+      var dom = require('dom-helper');
+      var test = require('simple-test');
+      var ObjectElement = require('object-element');
+          require('object-element-attribute');
+
+      test('objectElement.hasAttribute(name)', function () {
+        var div = dom.insertDiv();
+        var objectDiv = new ObjectElement(div);
+
+        test.eq(objectDiv.hasAttribute('foo'), false);
+        div.setAttribute('foo', 'bar');
+        test.eq(objectDiv.hasAttribute('foo'), true);
+        dom.remove(div);
+      });
+
+      test('objectElement.getAttribute(name)', function () {
+        var div = dom.insertDiv();
+        var objectDiv = new ObjectElement(div);
+
+        div.setAttribute('foo', 'bar');
+        test.eq(objectDiv.getAttribute('foo'), 'bar');
+        dom.remove(div);
+      });
+
+      test('objectElement.setAttribute(name, value)', function () {
+        var div = dom.insertDiv();
+        var objectDiv = new ObjectElement(div);
+
+        objectDiv.setAttribute('foo', 'bar');
+        test.eq(objectDiv.getAttribute('foo'), 'bar');
+        dom.remove(div);
+      });
+
+      test('objectElement.removeAttribute(name)', function () {
+        var div = dom.insertDiv();
+        var objectDiv = new ObjectElement(div);
+
+        objectDiv.setAttribute('foo', 'bar');
+        test.eq(objectDiv.hasAttribute('foo'), true);
+        test.eq(objectDiv.getAttribute('foo'), 'bar');
+        objectDiv.removeAttribute('foo');
+        test.eq(objectDiv.hasAttribute('foo'), false);
+        dom.remove(div);
+      });
+
+      </script>
+  </body>
+</html>

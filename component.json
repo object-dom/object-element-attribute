@@ -1,0 +1,20 @@
+{
+  "name": "object-element-attribute",
+  "repo": "object-dom/object-element-attribute",
+  "description": "Provide ObjectElement attribute manipulation methods",
+  "version": "0.0.1",
+  "keywords": [],
+  "dependencies": {
+    "object-dom/object-element": "*"
+  },
+  "development": {
+    "shallker/simple-test": "*", 
+    "shallker/dom-helper": "*" 
+  },
+  "license": "MIT",
+  "main": "index.js",
+  "scripts": [
+    "index.js",
+    "lib/object-element-attribute.js"
+  ]
+}
